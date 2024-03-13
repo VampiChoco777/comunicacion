@@ -1,0 +1,34 @@
+<div class="container mt-3">
+  <app-count-empleados></app-count-empleados>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>RFC</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Sexo</th>
+            <th>Salario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let empleado of listEmpleados">
+          <tr *ngIf="radioBottonSeleccionado === 'empleados' || radioBottonSeleccionado === empleado.Sexo">
+            <td>{{empleado.No}}</td>
+            <td>{{empleado.RFC}}</td>
+            <td>{{empleado.Nombre_Completo}}</td>
+            <td>{{empleado.Apellido_Paterno}}</td>
+            <td>{{empleado.Apellido_Materno}}</td>
+            <td>{{empleado.Sexo}}</td>
+            <td>{{empleado.Salario | currency}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
